@@ -14,7 +14,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 Verify the Docker installation:
 docker --version
 
-### Wazuh installation
+#### Wazuh installation
 Clone the Wazuh Docker repository:
 git clone https://github.com/wazuh/wazuh-docker.git
 
@@ -29,7 +29,7 @@ https://172.17.0.1/
 Enter valid credentials to access the Wazuh Dashboard:
 Create a Wazuh agent and activate the agent
 
-### IRIS Installation
+#### IRIS Installation
 This is not what I did
 I just cloned the t-guard and installed all tools from there
 THis is just for my report to show I did all the work hehe
@@ -55,7 +55,7 @@ https://172.17.0.1:8443/
 Enter valid credentials to access the IRIS Dashboard
 Change the password for the admin user
 
-### MISP Installation
+#### MISP Installation
 Clone the misp-docker GitHub repository:
 git clone https://github.com/MISP/misp-docker.git
 
@@ -69,7 +69,7 @@ https://172.17.0.1:1443/
 
 Login with valid credentials
 
-### Shuffle Installation
+#### Shuffle Installation
 Clone the shuffle Github repository:
 git clone https://github.com/frikky/Shuffle
 
@@ -85,7 +85,7 @@ Enter the default credentials for the admin user and access the Shuffle Dashboar
 
 Change the password for the administrator user
 
-### Verification
+#### Verification
 Verify all the components are running:
 docker ps
 
