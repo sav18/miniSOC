@@ -91,15 +91,15 @@ docker ps
 
 
 ## Integration
-## Integration between Wazuh and IRIS
+### Integration between Wazuh and IRIS
 Obtain the IRIS API key from the IRIS settings. In the Wazuh manager configuration, enable the integration with IRIS by adding the IRIS API key and URL to the ossec.conf file/wazuh-manager.conf.
 
-## Integration between Wazuh, IRIS and MISP
+### Integration between Wazuh, IRIS and MISP
 Set up the MISP API key in Wazuh's integration settings.
 Modify the Wazuh manager configuration to include MISP's API key and URL.
 Use IRIS as the central integration point, fetching alerts from Wazuh and correlating them with MISP data.
 
-## Creating Workflows on Shuffle
+### Creating Workflows on Shuffle
 Create a new workflow:
 Use the Wazuh Node to receive alerts. This is where I am stuck at. I followed the steps suggested in the following articles and videos. But I was not able to create the workflow to receive the alerts from Wazuh.
 Add a Condition Node to evaluate the alert severity. I have understood about how to use a condition but I am trying to figure out what parameters to put for checking the conditions: Here the condition is to check if there is any vulnerability. Eg. If there is a brute force attack then wazuh gets an alert saying ‘Multiple authentication failures’. In this condition send the alert to IRIS where it does a incident response and we can create a report for the incident. 
