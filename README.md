@@ -30,9 +30,6 @@ Enter valid credentials to access the Wazuh Dashboard:
 Create a Wazuh agent and activate the agent
 
 #### IRIS Installation
-This is not what I did
-I just cloned the t-guard and installed all tools from there
-THis is just for my report to show I did all the work hehe
 Clone the iris-web repository
 git clone https://github.com/dfir-iris/iris-web.git
 cd iris-web
@@ -101,8 +98,8 @@ Use IRIS as the central integration point, fetching alerts from Wazuh and correl
 
 ### Creating Workflows on Shuffle
 Create a new workflow:
-Use the Wazuh Node to receive alerts. This is where I am stuck at. I followed the steps suggested in the following articles and videos. But I was not able to create the workflow to receive the alerts from Wazuh.
-Add a Condition Node to evaluate the alert severity. I have understood about how to use a condition but I am trying to figure out what parameters to put for checking the conditions: Here the condition is to check if there is any vulnerability. Eg. If there is a brute force attack then wazuh gets an alert saying ‘Multiple authentication failures’. In this condition send the alert to IRIS where it does a incident response and we can create a report for the incident. 
+Use the Wazuh Node to receive alerts. 
+Add a Condition Node to evaluate the alert severity. Here the condition is to check if there is any vulnerability. Eg. If there is a brute force attack then wazuh gets an alert saying ‘Multiple authentication failures’. In this condition send the alert to IRIS where it does a incident response and we can create a report for the incident. 
 Integrate with IRIS and MISP using their respective nodes. MISP is a bit complicated so I chose not to implement it now, will focus on Shuffle.
 Use nodes to send notifications to collaboration tools (e.g., Slack, email).
 Save the workflow.
@@ -110,21 +107,17 @@ Save the workflow.
 
 ## Testing and Attack Simulation
 ### Testing the Integrations with Brute Force Attack
-Use tools like Hydra or Metasploit to simulate a brute-force attack against an SSH service.
+Use tools like Hydra to simulate a brute-force attack against an SSH service.
 Trigger an alert in Wazuh (e.g., simulate a failed SSH login).
 Verify the alert is correctly forwarded to IRIS.
-Ensure that MISP pulls the relevant threat intelligence based on the Wazuh alert.
-
 
 ### Generating IRIS Report
-I am also trying to understand how to do this as well
 https://github.com/cudeso/dfir-iris-misp-timesketch
 
 ### Testing the Workflows
 Run the workflow created in Shuffle to handle Wazuh alerts.
 Monitor the workflow steps in Shuffle for correct processing and routing of alerts to IRIS and MISP.
 Confirm that notifications are sent to the configured channels (e.g., Slack, email).
-Once we figure out above steps then only we can progress to this (Sending the notification to email)
 
 ### Simulating Webshell Attack 
 Deploy a test environment and introduce a malware sample.
